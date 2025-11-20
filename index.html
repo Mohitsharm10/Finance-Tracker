@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Finance Tracker</h1>
+
+    <!-- Balance Section -->
+    <div class="balance-box">
+      <div>
+        <h3>Total Balance</h3>
+        <h2 id="balance">₹0</h2>
+      </div>
+      <div>
+        <p>Income: <span id="income">₹0</span></p>
+        <p>Expense: <span id="expense">₹0</span></p>
+      </div>
+    </div>
+
+    <!-- Add Transaction -->
+    <div class="add-box">
+      <input id="title" type="text" placeholder="Title">
+      <input id="amount" type="number" placeholder="Amount">
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <!-- Transaction List -->
+    <h2>Transactions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="transactionTable"></tbody>
+    </table>
+
+    <!-- Chart -->
+    <h2>Income vs Expense Chart</h2>
+    <canvas id="chart"></canvas>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
